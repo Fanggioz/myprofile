@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Halaman Tidak Ditemukan | Fanggioz</title>
+  <style>
+    /* ===== RESET & DARK THEME MATURED ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      background-color: #0f172a; /* Menyatu dengan tema biolink */
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+    }
+
+    /* ===== HEADER & TEKS 404 ===== */
+    .header-404 {
+      text-align: center;
+      margin-bottom: 0.5rem;
+      z-index: 10;
+    }
+
+    .header-404 h1 {
+      color: #38bdf8;
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+    }
+
+    .header-404 p {
+      color: #94a3b8;
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+
+    .btn-back {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 18px;
+      background-color: #2563eb;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+
+    .btn-back:hover {
+      background-color: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    /* ===== PLAYGROUND ANIMASI ===== */
+    .playground {
+      position: relative;
+      width: 32em;
+      height: 25em;
+      max-width: 100%;
+      margin: 0 auto;
+      font-size: clamp(0.4rem, calc(1vw + 0.1rem), 0.9rem);
+      overflow: hidden;
+    }
+
+    .playground * {
+      position: absolute;
+      box-sizing: border-box;
+    }
+
+    .playground *::before,
+    .playground *::after {
+      position: absolute;
+      box-sizing: border-box;
+    }
+
+    /* SHADOW */
+    .shadow {
+      width: 32em;
+      height: 1.2em;
+      border-radius: 50%;
+      bottom: 1.8em;
+      left: 2em;
+      background-color: rgba(0, 0, 0, 0.3);
+      filter: blur(2px);
+      z-index: 0;
+    }
+
+    /* WASHING MACHINE BODY */
+    .washing-machine {
+      width: 17.5em;
+      height: 25em;
+      bottom: 2.4em;
+      left: 5em;
+      border-radius: 2.5em 2.5em 1.2em 1.2em;
+      background: linear-gradient(#f2fbff 82%, #e5ebee 82%, #e5ebee 83%, #f2fbff 83%);
+      box-shadow: 4.25em 0 #c5c7c8, inset -0.5em 0 1em rgba(0, 0, 0, 0.05);
+      z-index: 1;
+      animation: shake-machine 2500ms 0ms infinite ease;
+    }
+
+    @keyframes shake-machine {
+      10%, 14%, 18%, 22%, 26%, 30%, 34%, 38%, 42%, 46%, 50% { transform: translateY(-0.15em) rotate(-0.5deg); }
+      12%, 16%, 20%, 24%, 28%, 32%, 36%, 40%, 44%, 48%, 52% { transform: translateY(0) rotate(0.5deg); }
+    }
+
+    /* CONTROL PANEL & BUTTONS */
+    .washing-machine .board {
+      width: 90%;
+      height: 2.5em;
+      display: flex;
+      align-items: center;
+      gap: 0.75em;
+      padding-left: 1.5em;
+      padding-right: 1.5em;
+      top: 2.25em;
+      left: 5%;
+      border-radius: 1em;
+      background-color: #e8f1f4;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+    }
+
+    .washing-machine .board .button {
+      width: 1.5em;
+      height: 0.65em;
+      position: static;
+      border-radius: 0.15em;
+      background-color: #d9dddf;
+      box-shadow: 0.15em 0 #c2c4c6, 0 2px 2px rgba(0,0,0,0.1);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .washing-machine .board .button:hover {
+      filter: brightness(0.95);
+    }
+
+    .washing-machine .board .button:nth-of-type(2) { 
+      margin-right: auto; 
+    }
+
+    .washing-machine .board .button.circle { 
+      width: 1.2em; 
+      height: 1.2em; 
+      border-radius: 50%; 
+      background-color: #ea3949;
+      box-shadow: 0 0 6px #ea3949;
+      cursor: pointer;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .washing-machine.active .board .button.circle {
+      background-color: #4bb15f;
+      box-shadow: 0 0 10px #4bb15f, 0 0 20px rgba(75, 177, 95, 0.6);
+    }
+
+    /* LOGO BADGE */
+    .washing-machine .badge {
+      width: 3.25em;
+      height: 1.85em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.35em;
+      padding-bottom: 0.35em;
+      bottom: 0.65em;
+      right: 2em;
+      background-color: #e5ebee;
+      box-shadow: -0.15em 0 #c5c7c8;
+      border-radius: 0.25em;
+    }
+
+    .washing-machine .badge::before {
+      width: 1.25em;
+      height: 0.2em;
+      content: '';
+      top: -0.2em;
+      background-color: #d4d8da;
+      border-radius: 0.05em 0.05em 0 0;
+      z-index: -1;
+    }
+
+    .washing-machine .badge .line {
+      width: 65%;
+      height: 0.175em;
+      flex: none;
+      position: static;
+      border-radius: 0.1em;
+      background-color: #d4d8da;
+    }
+
+    /* CLOTHES SIDE & HOVER ANIMATION */
+    .clothes { 
+      right: 2.5em; 
+      bottom: 2.4em; 
+    }
+
+    .clothes .shirt {
+      --bg: #fcb900;
+      --shadow: #d59800;
+      width: 7em;
+      height: 0.75em;
+      position: static;
+      border-radius: 0.375em;
+      background: radial-gradient(circle 0.375em at 85% 50%, var(--bg) 100%, transparent 0),
+                  linear-gradient(90deg, var(--bg) 85%, var(--shadow) 85%);
+      margin-bottom: 0.2em;
+      cursor: pointer;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+    }
+
+    .clothes .shirt:hover {
+      transform: translateY(-4px) scale(1.03);
+    }
+
+    .clothes .shirt.orange { --bg: #ee6d02; --shadow: #c55602; }
+    .clothes .shirt.white { --bg: #f7eaea; --shadow: #ccd0d2; }
+
+    /* WINDOW & ROTATING DRUM */
+    .window {
+      width: 12.25em;
+      height: 12.25em;
+      left: 9em;
+      top: 7em;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      box-shadow: 0.6em 0 #c5c7c8, inset 0 0 15px rgba(0, 0, 0, 0.3);
+      background-color: #4a494d;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .window::before {
+      width: 100%;
+      height: 100%;
+      content: '';
+      box-shadow: 0 0 0 1.5em #e5ebee inset;
+      border-radius: 50%;
+      z-index: 10;
+      background: linear-gradient(-45deg, transparent 53%, rgba(255, 255, 255, 0.25) 53%, rgba(255, 255, 255, 0.25) 55%, transparent 55%, transparent 59%, rgba(255, 255, 255, 0.25) 59%, rgba(255, 255, 255, 0.25) 65%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .window::after {
+      width: 4em;
+      height: 4em;
+      content: '';
+      right: -0.55em;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      background-color: #e5ebee;
+      box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    }
+
+    .content {
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 90%, rgba(65, 164, 253, 0.25), transparent 70%);
+      animation: content-rotate 2500ms 0ms infinite ease-in-out;
+    }
+
+    @keyframes content-rotate {
+      0%, 55% { transform: rotate(-3turn); }
+      24%, 48% { filter: blur(0.075em); }
+      48% { filter: none; }
+      55% { transform: initial; }
+    }
+
+    /* CAT ART */
+    .cat {
+      width: 4.5em;
+      height: 6.5em;
+      left: 3.95em;
+      bottom: 1em;
+      transform-origin: center top;
+    }
+
+    .cat .head {
+      width: 100%;
+      height: 2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.15em;
+      top: 0.75em;
+      border-radius: 1em;
+      background-color: #2a2538;
+    }
+
+    .cat .head .eye {
+      width: 0.75em;
+      height: 0.75em;
+      position: static;
+      margin-top: -0.325em;
+      border-radius: 50%;
+      clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+      background: radial-gradient(circle 0.15em at 50% 50%, black 100%, transparent 0), white;
+    }
+
+    .cat .head .ear {
+      width: 0;
+      border-style: solid;
+      border-width: 0 0.45em 0.75em 0.45em;
+      border-color: transparent transparent #2a2538 transparent;
+      top: -0.75em;
+      left: 1.1em;
+    }
+
+    .cat .head .ear.right {
+      left: auto;
+      right: 1.1em;
+      z-index: 5;
+      transform-origin: bottom left;
+      animation: ear-animation 2500ms 0ms infinite ease;
+    }
+
+    @keyframes ear-animation {
+      0%, 68%, 78%, 86% { transform: skew(0); }
+      74%, 82% { transform: skew(-40deg); }
+    }
+
+    .cat .body {
+      width: 70%;
+      height: 3.35em;
+      top: 2.65em;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #2a2538;
+    }
+
+    .cat .feet {
+      width: 4.75em;
+      height: 1.25em;
+      bottom: 0.7em;
+      right: -0.25em;
+      border-radius: 0.75em;
+      background-color: #2a2538;
+    }
+
+    .cat .tail {
+      width: 4.5em;
+      height: 4.5em;
+      left: -2.25em;
+      bottom: 1.25em;
+      border-radius: 50%;
+      background: radial-gradient(circle 0.3em at 30% 11.5%, #2a2538 100%, transparent 0),
+                  radial-gradient(circle 1.65em at 50% 50%, #6e6d71 100%, transparent 0),
+                  conic-gradient(transparent 152deg, #2a2538 152deg 330deg, transparent 330deg);
+      z-index: -1;
+    }
+
+    /* SOCKS INSIDE WINDOW */
+    .sock {
+      width: 2.25em;
+      height: 3em;
+      z-index: 5;
+    }
+
+    .sock::before {
+      width: 1.15em;
+      height: 1.925em;
+      content: '';
+      border-radius: 0.1em 0.1em 0 0.1em;
+      background: linear-gradient(#f8a11e 25%, #ee6d02 25%, #ee6d02 35%, #f8a11e 35%, #f8a11e 45%, #ee6d02 45%);
+    }
+
+    .sock::after {
+      width: 1.15em;
+      height: 1.75em;
+      content: '';
+      background: radial-gradient(circle 0.55em at 50% 100%, #f8a11e 100%, transparent 0), #ee6d02;
+      bottom: -0.2em;
+      border-radius: 0.1em 0 1em 1em;
+      transform-origin: center top;
+      transform: rotate(-45deg) translateX(-0.15em);
+    }
+
+    .sock.orange {
+      bottom: -0.35em;
+      left: 5em;
+      transform: rotate(60deg);
+      animation: sock-falling 2500ms 0ms infinite ease;
+    }
+
+    @keyframes sock-falling {
+      50% { bottom: 10em; }
+      70%, 73% { transform: rotate(60deg); left: 4.75em; bottom: 5em; }
+      80% { transform: rotate(20deg); }
+      100% { bottom: 0; transform: rotate(-80deg); }
+    }
+
+    .sock.green::before { background: linear-gradient(#387d45 25%, #4bb15f 25%, #4bb15f 35%, #387d45 35%, #387d45 45%, #4bb15f 45%); }
+    .sock.green::after { background: radial-gradient(circle 0.55em at 50% 100%, #387d45 100%, transparent 0), #4bb15f; }
+    .sock.green { bottom: -0.15em; left: 2.5em; transform: rotate(120deg); }
+
+    .sock.red::before { background: linear-gradient(#ee6b77 25%, #ea3949 25%, #ea3949 35%, #ee6b77 35%, #ee6b77 45%, #ea3949 45%); }
+    .sock.red::after { background: radial-gradient(circle 0.55em at 50% 100%, #ee6b77 100%, transparent 0), #ea3949; }
+    .sock.red { bottom: 0; left: 1.5em; transform: rotate(45deg); }
+  </style>
+</head>
+<body>
+
+  <!-- INFORMASI 404 -->
+  <div class="header-404">
+    <h1>404</h1>
+    <p>Oops! Halaman yang kamu cari terputar di dalam mesin cuci.</p>
+    <a href="index.html" class="btn-back">⬅ Kembali ke Utama</a>
+  </div>
+
+  <!-- ANIMASI MESIN CUCI -->
+  <div class="playground">
+    <div class="shadow"></div>
+    <div class="washing-machine">
+      <div class="board">
+        <div class="button circle" title="Power ON/OFF"></div>
+        <div class="button" title="Atur Kecepatan"></div>
+        <div class="button"></div>
+      </div>
+      <div class="window">
+        <div class="content">
+          <div class="cat">
+            <div class="head">
+              <div class="ear left"></div>
+              <div class="eye left"></div>
+              <div class="eye right"></div>
+              <div class="ear right"></div>
+            </div>
+            <div class="body"></div>
+            <div class="feet"></div>
+            <div class="tail"></div>
+          </div>
+          <div class="sock orange"></div>
+          <div class="sock green"></div>
+          <div class="sock red"></div>
+        </div>
+      </div>
+      <div class="badge">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+    <div class="clothes">
+      <div class="shirt orange" title="Klik Saya!"></div>
+      <div class="shirt white" title="Klik Saya!"></div>
+      <div class="shirt" title="Klik Saya!"></div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT KONTROL ANIMASI & AUDIO -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const machine = document.querySelector('.washing-machine');
+      const powerBtn = document.querySelector('.button.circle');
+      const speedBtn = document.querySelector('.board .button:nth-of-type(2)');
+      const content = document.querySelector('.content');
+      const catEar = document.querySelector('.cat .head .ear.right');
+      const fallingSock = document.querySelector('.sock.orange');
+      const shirts = document.querySelectorAll('.clothes .shirt');
+
+      let isRunning = true;
+      let currentSpeed = 2500; // ms per siklus
+
+      // --- 1. WEB AUDIO API ---
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      let oscillator = null;
+      let gainNode = null;
+
+      function startAudio() {
+        if (oscillator) return;
+        oscillator = audioCtx.createOscillator();
+        gainNode = audioCtx.createGain();
+
+        oscillator.type = 'sawtooth';
+        oscillator.frequency.setValueAtTime(40, audioCtx.currentTime);
+        gainNode.gain.setValueAtTime(0.03, audioCtx.currentTime);
+
+        oscillator.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+        oscillator.start();
+      }
+
+      function stopAudio() {
+        if (oscillator) {
+          oscillator.stop();
+          oscillator.disconnect();
+          oscillator = null;
+        }
+      }
+
+      // --- 2. POWER ON / OFF ---
+      powerBtn.addEventListener('click', () => {
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+
+        isRunning = !isRunning;
+
+        if (isRunning) {
+          machine.classList.add('active');
+          machine.style.animationPlayState = 'running';
+          content.style.animationPlayState = 'running';
+          if (catEar) catEar.style.animationPlayState = 'running';
+          if (fallingSock) fallingSock.style.animationPlayState = 'running';
+          startAudio();
+        } else {
+          machine.classList.remove('active');
+          machine.style.animationPlayState = 'paused';
+          content.style.animationPlayState = 'paused';
+          if (catEar) catEar.style.animationPlayState = 'paused';
+          if (fallingSock) fallingSock.style.animationPlayState = 'paused';
+          stopAudio();
+        }
+      });
+
+      // Default aktif
+      machine.classList.add('active');
+
+      // --- 3. KONTROL KECEPATAN ---
+      if (speedBtn) {
+        speedBtn.addEventListener('click', () => {
+          if (!isRunning) return;
+
+          currentSpeed = currentSpeed === 2500 ? 1000 : 2500;
+          const speedStr = `${currentSpeed}ms`;
+          
+          machine.style.animationDuration = speedStr;
+          content.style.animationDuration = speedStr;
+          if (catEar) catEar.style.animationDuration = speedStr;
+          if (fallingSock) fallingSock.style.animationDuration = speedStr;
+
+          if (oscillator) {
+            oscillator.frequency.setValueAtTime(currentSpeed === 1000 ? 70 : 40, audioCtx.currentTime);
+          }
+        });
+      }
+
+      // --- 4. INTERAKSI BAJU ---
+      shirts.forEach((shirt) => {
+        shirt.addEventListener('click', () => {
+          shirt.style.transform = 'translate(-12em, -8em) scale(0.2) rotate(360deg)';
+          shirt.style.opacity = '0';
+          
+          setTimeout(() => {
+            shirt.style.transform = 'none';
+            shirt.style.opacity = '1';
+          }, 3000);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
