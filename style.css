@@ -27,7 +27,7 @@ html {
 
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
-  color: var(--text-main);
+  color: var(--bg-color);
   display: flex;
   justify-content: center;
   align-items: center;
