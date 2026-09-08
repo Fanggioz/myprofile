@@ -13,13 +13,13 @@ Sebuah halaman web **Bio Link** personal yang responsif, ringan, dan modern. Did
 ## 🛠️ Teknologi yang Digunakan
 
 * **HTML5**: Struktur halaman & Semantic Markup
-* **CSS3**: Layouting (Flexbox), Variabel CSS, & Animasi Keyframes
+* **CSS3**: Layouting (Flexbox), Variabel CSS (Plus Jakarta Sans), & Animasi Keyframes
 * **JavaScript (Vanilla)**: Interaktivitas DOM ringan
 * **Font Awesome**: Ikon media sosial
-* **Google Fonts**: Tipografi 'Inter'
+* **Google Fonts**: Tipografi 'Plus Jakarta Sans'
 
 ## 🚀 Cara Menjalankan Secara Lokal
 
 1. Clone repositori ini:
    ```bash
-   git clone [https://github.com/fanggioz/fanggioz.github.io.git](https://github.com/fanggioz/fanggioz.github.io.git)
+   git clone [https://github.com/Fanggioz/myprofile.git](https://github.com/Fanggioz/myprofile.git)
