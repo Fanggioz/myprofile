@@ -19,8 +19,10 @@
 html, body {
   height: 100vh;
   width: 100vw;
-  overflow-x: hidden;
-  background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  touch-action: none;
 }
 
 body {
