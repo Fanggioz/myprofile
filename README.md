@@ -2,8 +2,6 @@
 
 Sebuah halaman web **Bio Link** personal yang responsif, ringan, dan modern. Didesain menggunakan HTML, CSS, dan JavaScript murni tanpa pustaka eksternal berlebih, dilengkapi animasi bingkai Instagram Story yang berputar secara dinamis.
 
-![Bio Link Preview](assets/og-preview.png)
-
 ## ✨ Fitur Utama
 
 - **Desain Modern & Responsif**: Tampilan optimal di perangkat *mobile* maupun *desktop*.
