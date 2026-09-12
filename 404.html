@@ -7,7 +7,6 @@
   <meta name="robots" content="noindex, follow">
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <style>
-    /* ===== RESET & DARK THEME MATURED ===== */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -20,7 +19,7 @@
     }
 
     body {
-      background-color: #0f172a; /* Menyatu dengan tema biolink */
+      background-color: #0f172a;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       color: #f8fafc;
       display: flex;
@@ -30,7 +29,6 @@
       padding: 10px 20px;
     }
 
-    /* ===== HEADER & TEKS 404 ===== */
     .header-404 {
       text-align: center;
       margin-bottom: 0.5rem;
@@ -70,7 +68,6 @@
       transform: translateY(-2px);
     }
 
-    /* ===== PLAYGROUND ANIMASI ===== */
     .playground {
       position: relative;
       width: 32em;
@@ -92,7 +89,6 @@
       box-sizing: border-box;
     }
 
-    /* SHADOW */
     .shadow {
       width: 32em;
       height: 1.2em;
@@ -104,7 +100,6 @@
       z-index: 0;
     }
 
-    /* WASHING MACHINE BODY */
     .washing-machine {
       width: 17.5em;
       height: 25em;
@@ -122,7 +117,6 @@
       12%, 16%, 20%, 24%, 28%, 32%, 36%, 40%, 44%, 48%, 52% { transform: translateY(0) rotate(0.5deg); }
     }
 
-    /* CONTROL PANEL & BUTTONS */
     .washing-machine .board {
       width: 90%;
       height: 2.5em;
@@ -172,7 +166,6 @@
       box-shadow: 0 0 10px #4bb15f, 0 0 20px rgba(75, 177, 95, 0.6);
     }
 
-    /* LOGO BADGE */
     .washing-machine .badge {
       width: 3.25em;
       height: 1.85em;
@@ -208,7 +201,6 @@
       background-color: #d4d8da;
     }
 
-    /* CLOTHES SIDE & HOVER ANIMATION */
     .clothes { 
       right: 2.5em; 
       bottom: 2.4em; 
@@ -235,7 +227,6 @@
     .clothes .shirt.orange { --bg: #ee6d02; --shadow: #c55602; }
     .clothes .shirt.white { --bg: #f7eaea; --shadow: #ccd0d2; }
 
-    /* WINDOW & ROTATING DRUM */
     .window {
       width: 12.25em;
       height: 12.25em;
@@ -286,7 +277,6 @@
       55% { transform: initial; }
     }
 
-    /* CAT ART */
     .cat {
       width: 4.5em;
       height: 6.5em;
@@ -369,7 +359,6 @@
       z-index: -1;
     }
 
-    /* SOCKS INSIDE WINDOW */
     .sock {
       width: 2.25em;
       height: 3em;
@@ -420,14 +409,12 @@
 </head>
 <body>
 
-  <!-- INFORMASI 404 -->
   <div class="header-404">
     <h1>404</h1>
     <p>Oops! Halaman yang kamu cari terputar di dalam mesin cuci.</p>
     <a href="/" class="btn-back">⬅ Kembali ke Utama</a>
   </div>
 
-  <!-- ANIMASI MESIN CUCI -->
   <div class="playground">
     <div class="shadow"></div>
     <div class="washing-machine">
@@ -467,7 +454,6 @@
     </div>
   </div>
 
-  <!-- JAVASCRIPT KONTROL ANIMASI & AUDIO -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const machine = document.querySelector('.washing-machine');
@@ -479,9 +465,8 @@
       const shirts = document.querySelectorAll('.clothes .shirt');
 
       let isRunning = true;
-      let currentSpeed = 2500; // ms per siklus
-
-      // --- 1. WEB AUDIO API ---
+      let currentSpeed = 2500; 
+      
       const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
       let oscillator = null;
       let gainNode = null;
@@ -508,7 +493,6 @@
         }
       }
 
-      // --- 2. POWER ON / OFF ---
       powerBtn.addEventListener('click', () => {
         if (audioCtx.state === 'suspended') {
           audioCtx.resume();
@@ -533,10 +517,8 @@
         }
       });
 
-      // Default aktif
       machine.classList.add('active');
 
-      // --- 3. KONTROL KECEPATAN ---
       if (speedBtn) {
         speedBtn.addEventListener('click', () => {
           if (!isRunning) return;
@@ -555,7 +537,6 @@
         });
       }
 
-      // --- 4. INTERAKSI BAJU ---
       shirts.forEach((shirt) => {
         shirt.addEventListener('click', () => {
           shirt.style.transform = 'translate(-12em, -8em) scale(0.2) rotate(360deg)';
