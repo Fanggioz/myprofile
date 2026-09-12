@@ -179,6 +179,18 @@ body {
   background: #1877f2;
 }
 
+.app-card.threads .app-icon {
+  background: #000000;
+}
+
+.app-card.gmail .app-icon {
+  background: #ea4335;
+}
+
+.app-card.github .app-icon {
+  background: #24292e;
+}
+
 footer {
   margin-top: 20px;
   font-size: 0.75rem;
