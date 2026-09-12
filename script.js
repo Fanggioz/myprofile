@@ -17,3 +17,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+if (typeof anime !== 'undefined') {
+  anime({
+    targets: '.signature',
+    strokeDashoffset: [1200, 0],
+    easing: 'easeInOutQuart',
+    duration: 2500,
+    delay: 300,
+    fill: [
+      { value: 'rgba(245, 159, 0, 0)', duration: 1800 },
+      { value: 'rgba(245, 159, 0, 1)', duration: 700 }
+    ]
+  });
+}
+
+function hidePreloader() {
+  var preloader = document.getElementById('preloader');
+  if (preloader && !preloader.classList.contains('hidden')) {
+    preloader.classList.add('hidden');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(hidePreloader, 2800);
+});
+
+setTimeout(hidePreloader, 4000);
+
+window.addEventListener('load', function() {
+  setTimeout(hidePreloader, 2000);
+});
