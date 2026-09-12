@@ -310,7 +310,7 @@ footer {
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: #111827;
+      background-color: var(--bg-color);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -325,7 +325,7 @@ footer {
       font-family: 'Ms Madi', cursive;
       font-size: 80px;
       fill: rgba(245, 159, 0, 0);
-      stroke: #f59f00;
+      stroke: #111827;
       stroke-width: 2.5;
       stroke-dasharray: 1200;
       stroke-dashoffset: 1200;
