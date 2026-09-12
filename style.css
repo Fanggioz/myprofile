@@ -304,3 +304,34 @@ footer {
     padding: 10px 14px;
   }
 }
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #fff9db;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    .loader-container {
+      width: 90%;
+      max-width: 600px;
+    }
+    .signature {
+      font-family: 'Ms Madi', cursive;
+      font-size: 80px;
+      fill: rgba(245, 159, 0, 0);
+      stroke: #f59f00;
+      stroke-width: 2.5;
+      stroke-dasharray: 1200;
+      stroke-dashoffset: 1200;
+    }
+    #preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
