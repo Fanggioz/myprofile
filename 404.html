@@ -6,6 +6,9 @@
   <title>404 - Halaman Tidak Ditemukan | Fanggioz</title>
   <meta name="robots" content="noindex, follow">
   <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -19,14 +22,15 @@
     }
 
     body {
-      background-color: #0f172a;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      color: #f8fafc;
+      background-color: #d6dee4; /* Selaras dengan latar belakang utama web Anda */
+      font-family: "Plus Jakarta Sans", sans-serif;
+      color: #1f2937;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 10px 20px;
+      -webkit-font-smoothing: antialiased;
     }
 
     .header-404 {
@@ -36,16 +40,17 @@
     }
 
     .header-404 h1 {
-      color: #38bdf8;
+      color: #0284c7; /* Warna biru sejuk khas Plus N Cool */
       font-size: 2.5rem;
       font-weight: 800;
       letter-spacing: 1px;
-      text-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+      text-shadow: 0 2px 10px rgba(2, 132, 199, 0.15);
     }
 
     .header-404 p {
-      color: #94a3b8;
+      color: #1a2d52;
       font-size: 0.9rem;
+      font-weight: 500;
       margin-top: 4px;
     }
 
@@ -53,18 +58,18 @@
       display: inline-block;
       margin-top: 10px;
       padding: 8px 18px;
-      background-color: #2563eb;
+      background-color: #0284c7;
       color: #ffffff;
       text-decoration: none;
       font-weight: 600;
       font-size: 0.85rem;
       border-radius: 20px;
       transition: all 0.2s ease;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
     }
 
     .btn-back:hover {
-      background-color: #1d4ed8;
+      background-color: #0369a1;
       transform: translateY(-2px);
     }
 
@@ -95,7 +100,7 @@
       border-radius: 50%;
       bottom: 1.8em;
       left: 2em;
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: rgba(0, 0, 0, 0.12);
       filter: blur(2px);
       z-index: 0;
     }
@@ -106,8 +111,8 @@
       bottom: 2.4em;
       left: 5em;
       border-radius: 2.5em 2.5em 1.2em 1.2em;
-      background: linear-gradient(#f2fbff 82%, #e5ebee 82%, #e5ebee 83%, #f2fbff 83%);
-      box-shadow: 4.25em 0 #c5c7c8, inset -0.5em 0 1em rgba(0, 0, 0, 0.05);
+      background: linear-gradient(#f8fafc 82%, #e2e8f0 82%, #e2e8f0 83%, #f8fafc 83%);
+      box-shadow: 4.25em 0 #cbd5e1, inset -0.5em 0 1em rgba(0, 0, 0, 0.04);
       z-index: 1;
       animation: shake-machine 2500ms 0ms infinite ease;
     }
@@ -128,7 +133,7 @@
       top: 2.25em;
       left: 5%;
       border-radius: 1em;
-      background-color: #e8f1f4;
+      background-color: #cbd5e1;
       box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
     }
 
@@ -137,8 +142,8 @@
       height: 0.65em;
       position: static;
       border-radius: 0.15em;
-      background-color: #d9dddf;
-      box-shadow: 0.15em 0 #c2c4c6, 0 2px 2px rgba(0,0,0,0.1);
+      background-color: #94a3b8;
+      box-shadow: 0.15em 0 #64748b, 0 2px 2px rgba(0,0,0,0.1);
       transition: all 0.2s ease;
       cursor: pointer;
     }
@@ -155,15 +160,15 @@
       width: 1.2em; 
       height: 1.2em; 
       border-radius: 50%; 
-      background-color: #ea3949;
-      box-shadow: 0 0 6px #ea3949;
+      background-color: #ef4444;
+      box-shadow: 0 0 6px #ef4444;
       cursor: pointer;
       transition: background-color 0.3s, box-shadow 0.3s;
     }
 
     .washing-machine.active .board .button.circle {
-      background-color: #4bb15f;
-      box-shadow: 0 0 10px #4bb15f, 0 0 20px rgba(75, 177, 95, 0.6);
+      background-color: #22c55e;
+      box-shadow: 0 0 10px #22c55e, 0 0 20px rgba(34, 197, 94, 0.4);
     }
 
     .washing-machine .badge {
@@ -177,8 +182,8 @@
       padding-bottom: 0.35em;
       bottom: 0.65em;
       right: 2em;
-      background-color: #e5ebee;
-      box-shadow: -0.15em 0 #c5c7c8;
+      background-color: #e2e8f0;
+      box-shadow: -0.15em 0 #cbd5e1;
       border-radius: 0.25em;
     }
 
@@ -187,7 +192,7 @@
       height: 0.2em;
       content: '';
       top: -0.2em;
-      background-color: #d4d8da;
+      background-color: #cbd5e1;
       border-radius: 0.05em 0.05em 0 0;
       z-index: -1;
     }
@@ -198,7 +203,7 @@
       flex: none;
       position: static;
       border-radius: 0.1em;
-      background-color: #d4d8da;
+      background-color: #94a3b8;
     }
 
     .clothes { 
@@ -207,8 +212,8 @@
     }
 
     .clothes .shirt {
-      --bg: #fcb900;
-      --shadow: #d59800;
+      --bg: #0ea5e9;
+      --shadow: #0284c7;
       width: 7em;
       height: 0.75em;
       position: static;
@@ -224,8 +229,8 @@
       transform: translateY(-4px) scale(1.03);
     }
 
-    .clothes .shirt.orange { --bg: #ee6d02; --shadow: #c55602; }
-    .clothes .shirt.white { --bg: #f7eaea; --shadow: #ccd0d2; }
+    .clothes .shirt.orange { --bg: #f97316; --shadow: #c2410c; }
+    .clothes .shirt.white { --bg: #f8fafc; --shadow: #cbd5e1; }
 
     .window {
       width: 12.25em;
@@ -234,8 +239,8 @@
       top: 7em;
       transform: translateX(-50%);
       border-radius: 50%;
-      box-shadow: 0.6em 0 #c5c7c8, inset 0 0 15px rgba(0, 0, 0, 0.3);
-      background-color: #4a494d;
+      box-shadow: 0.6em 0 #cbd5e1, inset 0 0 15px rgba(0, 0, 0, 0.15);
+      background-color: #334155;
       overflow: hidden;
       z-index: 1;
     }
@@ -244,7 +249,7 @@
       width: 100%;
       height: 100%;
       content: '';
-      box-shadow: 0 0 0 1.5em #e5ebee inset;
+      box-shadow: 0 0 0 1.5em #e2e8f0 inset;
       border-radius: 50%;
       z-index: 10;
       background: linear-gradient(-45deg, transparent 53%, rgba(255, 255, 255, 0.25) 53%, rgba(255, 255, 255, 0.25) 55%, transparent 55%, transparent 59%, rgba(255, 255, 255, 0.25) 59%, rgba(255, 255, 255, 0.25) 65%, transparent 65%);
@@ -259,14 +264,14 @@
       top: 50%;
       transform: translateY(-50%);
       border-radius: 50%;
-      background-color: #e5ebee;
+      background-color: #e2e8f0;
       box-shadow: -2px 0 5px rgba(0,0,0,0.1);
     }
 
     .content {
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at 50% 90%, rgba(65, 164, 253, 0.25), transparent 70%);
+      background: radial-gradient(circle at 50% 90%, rgba(14, 165, 233, 0.35), transparent 70%);
       animation: content-rotate 2500ms 0ms infinite ease-in-out;
     }
 
@@ -294,7 +299,7 @@
       gap: 0.15em;
       top: 0.75em;
       border-radius: 1em;
-      background-color: #2a2538;
+      background-color: #1e293b;
     }
 
     .cat .head .eye {
@@ -311,7 +316,7 @@
       width: 0;
       border-style: solid;
       border-width: 0 0.45em 0.75em 0.45em;
-      border-color: transparent transparent #2a2538 transparent;
+      border-color: transparent transparent #1e293b transparent;
       top: -0.75em;
       left: 1.1em;
     }
@@ -335,7 +340,7 @@
       top: 2.65em;
       left: 50%;
       transform: translateX(-50%);
-      background-color: #2a2538;
+      background-color: #1e293b;
     }
 
     .cat .feet {
@@ -344,7 +349,7 @@
       bottom: 0.7em;
       right: -0.25em;
       border-radius: 0.75em;
-      background-color: #2a2538;
+      background-color: #1e293b;
     }
 
     .cat .tail {
@@ -353,9 +358,9 @@
       left: -2.25em;
       bottom: 1.25em;
       border-radius: 50%;
-      background: radial-gradient(circle 0.3em at 30% 11.5%, #2a2538 100%, transparent 0),
-                  radial-gradient(circle 1.65em at 50% 50%, #6e6d71 100%, transparent 0),
-                  conic-gradient(transparent 152deg, #2a2538 152deg 330deg, transparent 330deg);
+      background: radial-gradient(circle 0.3em at 30% 11.5%, #1e293b 100%, transparent 0),
+                  radial-gradient(circle 1.65em at 50% 50%, #94a3b8 100%, transparent 0),
+                  conic-gradient(transparent 152deg, #1e293b 152deg 330deg, transparent 330deg);
       z-index: -1;
     }
 
@@ -370,14 +375,14 @@
       height: 1.925em;
       content: '';
       border-radius: 0.1em 0.1em 0 0.1em;
-      background: linear-gradient(#f8a11e 25%, #ee6d02 25%, #ee6d02 35%, #f8a11e 35%, #f8a11e 45%, #ee6d02 45%);
+      background: linear-gradient(#f97316 25%, #ea580c 25%, #ea580c 35%, #f97316 35%, #f97316 45%, #ea580c 45%);
     }
 
     .sock::after {
       width: 1.15em;
       height: 1.75em;
       content: '';
-      background: radial-gradient(circle 0.55em at 50% 100%, #f8a11e 100%, transparent 0), #ee6d02;
+      background: radial-gradient(circle 0.55em at 50% 100%, #f97316 100%, transparent 0), #ea580c;
       bottom: -0.2em;
       border-radius: 0.1em 0 1em 1em;
       transform-origin: center top;
@@ -398,12 +403,12 @@
       100% { bottom: 0; transform: rotate(-80deg); }
     }
 
-    .sock.green::before { background: linear-gradient(#387d45 25%, #4bb15f 25%, #4bb15f 35%, #387d45 35%, #387d45 45%, #4bb15f 45%); }
-    .sock.green::after { background: radial-gradient(circle 0.55em at 50% 100%, #387d45 100%, transparent 0), #4bb15f; }
+    .sock.green::before { background: linear-gradient(#16a34a 25%, #22c55e 25%, #22c55e 35%, #16a34a 35%, #16a34a 45%, #22c55e 45%); }
+    .sock.green::after { background: radial-gradient(circle 0.55em at 50% 100%, #16a34a 100%, transparent 0), #22c55e; }
     .sock.green { bottom: -0.15em; left: 2.5em; transform: rotate(120deg); }
 
-    .sock.red::before { background: linear-gradient(#ee6b77 25%, #ea3949 25%, #ea3949 35%, #ee6b77 35%, #ee6b77 45%, #ea3949 45%); }
-    .sock.red::after { background: radial-gradient(circle 0.55em at 50% 100%, #ee6b77 100%, transparent 0), #ea3949; }
+    .sock.red::before { background: linear-gradient(#dc2626 25%, #ef4444 25%, #ef4444 35%, #dc2626 35%, #dc2626 45%, #ef4444 45%); }
+    .sock.red::after { background: radial-gradient(circle 0.55em at 50% 100%, #dc2626 100%, transparent 0), #ef4444; }
     .sock.red { bottom: 0; left: 1.5em; transform: rotate(45deg); }
   </style>
 </head>
@@ -411,7 +416,7 @@
 
   <div class="header-404">
     <h1>404</h1>
-    <p>Oops! Halaman yang kamu cari terputar di dalam mesin cuci.</p>
+    <p>Oops! Halaman yang kamu cari sedang dicuci bersama Plus N Cool. 🌀</p>
     <a href="/" class="btn-back">⬅ Kembali ke Utama</a>
   </div>
 
