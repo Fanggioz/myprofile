@@ -115,7 +115,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 20px 12px;
   justify-items: center;
-  padding: 12px 4px;
+  padding: 16px 8px;
 }
 
 .app-card {
@@ -126,7 +126,8 @@ body {
   gap: 6px;
   width: 100%;
   position: relative;
-  overflow: hidden;
+  overflow: visible; 
+  padding: 4px;
 }
 
 .app-icon {
