@@ -125,6 +125,8 @@ body {
   text-decoration: none;
   gap: 6px;
   width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .app-icon {
@@ -158,37 +160,14 @@ body {
   transform: scale(0.92);
 }
 
-.app-card.whatsapp .app-icon {
-  background: #25d366;
-}
-
-.app-card.instagram .app-icon {
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-}
-
-.app-card.tiktok .app-icon {
-  background: #000000;
-}
-
-.app-card.telegram .app-icon {
-  background: #229ed9;
-}
-
-.app-card.facebook .app-icon {
-  background: #1877f2;
-}
-
-.app-card.threads .app-icon {
-  background: #000000;
-}
-
-.app-card.gmail .app-icon {
-  background: #ea4335;
-}
-
-.app-card.github .app-icon {
-  background: #24292e;
-}
+.app-card.whatsapp .app-icon { background: #25d366; }
+.app-card.instagram .app-icon { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.app-card.tiktok .app-icon { background: #000000; }
+.app-card.telegram .app-icon { background: #229ed9; }
+.app-card.facebook .app-icon { background: #1877f2; }
+.app-card.threads .app-icon { background: #000000; }
+.app-card.gmail .app-icon { background: #ea4335; }
+.app-card.github .app-icon { background: #24292e; }
 
 footer {
   margin-top: 20px;
@@ -246,8 +225,8 @@ footer {
   .links-container {
     gap: 8px;
   }
-  .link-card {
-    padding: 10px 14px;
+  .app-card {
+    padding: 4px;
   }
 }
 
